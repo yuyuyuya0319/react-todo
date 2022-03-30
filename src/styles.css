@@ -1,0 +1,166 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Gotu&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  width: 100%;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #da4453; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #89216b,
+    #da4453
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #89216b,
+    #da4453
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  font-family: 'Gotu', sans-serif;
+}
+
+.fa-trash-alt,
+.fa-plus {
+  pointer-events: none;
+}
+
+.add-task {
+  min-height: 15vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 85%;
+  max-width: 550px;
+  margin-bottom: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.add-task__input {
+  flex-grow: 1;
+  background-color: transparent;
+  height: 2.5rem;
+  border: none;
+  border-bottom: 1px solid #f3f3f3;
+  outline: none;
+  font-size: 1.3rem;
+  padding-top: 1rem;
+  color: #f3f3f3;
+  opacity: 0.8;
+}
+
+.add-task__input::placeholder {
+  color: lightgray;
+  opacity: 0.5;
+}
+
+.add-task__button {
+  outline: none;
+  border: none;
+  background-color: #f3f3f3;
+  color: #da4453;
+  width: 7vw;
+  max-width: 40px;
+  height: 7vw;
+  max-height: 40px;
+  border-radius: 50%;
+  font-size: 1rem;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.add-task__button:hover {
+  opacity: 1;
+}
+
+.tasks-list {
+  background-color: #f3f3f3;
+  width: 85%;
+  max-width: 550px;
+  border-radius: 6px;
+  list-style: none;
+  font-size: 1.2rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.task {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  line-height: 2rem;
+  padding: 0.5rem;
+  border-bottom: 2px dashed lightgray;
+}
+
+.task__checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  min-width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  border: 1px solid gray;
+  position: relative;
+  cursor: pointer;
+}
+
+.task__checkbox:checked::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  height: 70%;
+  border-radius: 50%;
+  background-color: gray;
+}
+
+.task__description {
+  padding: 0 0.8rem;
+  flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.task__delete-btn {
+  min-width: 1.8rem;
+  height: 1.8rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.task__checkbox:checked + .task__description {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.project-description {
+  padding: 1.2rem;
+}
+
+.project-description__link {
+  text-decoration: none;
+  font-weight: bolder;
+  opacity: 0.6;
+}
+
+.project-description__link:hover {
+  opacity: 1;
+}
